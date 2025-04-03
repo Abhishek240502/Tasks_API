@@ -19,7 +19,7 @@ app.post('/task', async (req, res, next) => {
         }
 
         // Insert the task into the database
-        await sql`INSERT INTO tasks (id, name) VALUES (${id}, ${newTask})`;
+        await sql`INSERT INTO tasks (id, name) VALUES (${req.body.id}, ${req.body.newTask})`;
 
         res.status(200).json({
             message: 'Task added successfully',
